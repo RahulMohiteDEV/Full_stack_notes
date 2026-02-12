@@ -24,7 +24,7 @@ const App = () => {
   ])
 
   function fetchNotes(){
-     axios.get('http://localhost:3000/notes')
+     axios.get('https://full-stack-notes-ddv9.onrender.com/notes')
    .then((res) => {
     setNotes(res.data.notes)
    })
@@ -41,7 +41,7 @@ function handleSubmit(e){
 
   console.log(title.value, description.value);
 
-  axios.post('http://localhost:3000/notes',{
+  axios.post('https://full-stack-notes-ddv9.onrender.com/notes',{
     title: title.value,
     description:description.value
   })
@@ -53,7 +53,7 @@ function handleSubmit(e){
 }
 
 function handleDelete(noteId){
-  axios.delete('http://localhost:3000/notes/'+noteId)
+  axios.delete('https://full-stack-notes-ddv9.onrender.com/notes/'+noteId)
    .then(res => {
     console.log(res.data);
     fetchNotes();
